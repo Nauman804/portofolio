@@ -1,58 +1,53 @@
-AI/ML Portfolio — [M. Nauman Anwar / Nauman804]
-Welcome to my professional portfolio! 🌐
+# 🐺 M. Nauman Anwar | AI/ML Specialist Portfolio
+### *Bridging Intelligent Systems with High-End Visual Design*
 
-Developed using React 19 + Vite, this website serves as a showcase for my projects in Artificial Intelligence, Machine Learning, and high-fidelity AI media synthesis.
+[![Live Site](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://Nauman804.github.io/portofolio/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/m-nauman-anwar/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Nauman804)
 
-🛠️ Project Structure
-public/ — Static assets (Favicon, branding images, etc.).
+---
 
-src/ — Main React source code including 3D Lanyard and Aurora background components.
+## 🌐 Overview
+Welcome to my professional portfolio! This project is a high-fidelity showcase of my journey as an **Artificial Intelligence Student** at Superior University. Built with **React 19 + Vite**, it merges modern web technologies with interactive 3D elements to present a premium digital experience.
 
-index.html — The main entry point of the application.
+## ✨ Key Features
+*   **3D Interactive Lanyard:** A custom-built Three.js component featuring personalized "Gokboru" branding.
+*   **AI/ML Focused:** Dedicated showcase for Predictive Modeling, NLP, and GenAI projects.
+*   **Aurora UI:** A dynamic, modern background aesthetic powered by GSAP and Framer Motion.
+*   **Fully Responsive:** Seamlessly optimized for all devices using Tailwind CSS.
 
-package.json — Dependency management (Three.js, Framer Motion, GSAP).
+## 🛠️ Tech Stack
+| Category | Tools & Technologies |
+| :--- | :--- |
+| **Frontend** | React 19, Vite, Tailwind CSS, Framer Motion |
+| **3D / Graphics** | Three.js, React Three Fiber, GSAP |
+| **AI / ML** | Python, Scikit-learn, LLM Integration, GenAI |
+| **Deployment** | GitHub Pages, Git |
 
-vite.config.js — Vite configuration optimized for GitHub Pages deployment.
+## 🚀 Projects Highlighted
+1.  **AI Study Assistant:** Smart platform for curriculum management.
+2.  **Health Chatbot:** GenAI-powered medical guidance system.
+3.  **Spam Detector:** Machine Learning model for real-time text classification.
+4.  **Cinematic AI Media:** High-fidelity 8K visual synthesis using advanced prompt engineering.
 
-✨ Key Features
-Modern Tech Stack: Built with React 19 and Vite for lightning-fast performance and hot reloading.
+## 💻 Getting Started
+To run this project locally:
+```bash
+# Clone the repository
+git clone [https://github.com/Nauman804/portofolio.git](https://github.com/Nauman804/portofolio.git)
 
-Creative UI/UX: Features an interactive 3D Lanyard and a dynamic Aurora background for a premium feel.
-
-ML Focused: Highlights specialized Machine Learning projects such as Gokboru Spam Detector and Heart Disease Prediction.
-
-Fully Responsive: Optimized for seamless viewing on mobile, tablet, and desktop devices using Tailwind CSS.
-
-🚀 How to Run Locally
-Clone this repository:
-
-Bash
-git clone https://github.com/Nauman804/portofolio.git
-cd portofolio
-Install dependencies:
-
-Bash
+# Install dependencies
 npm install
-Run the development server:
 
-Bash
+# Launch development server
 npm run dev
-Deploy to GitHub Pages:
 
-Bash
+# Deploy to GitHub Pages
 npm run deploy
-🔗 Live Preview
-You can explore the live version of my portfolio here:
-
-🔗 Visit Live Portfolio
 
 🐺 About Me
-Hi, I'm M. Nauman Anwar (GitHub: Nauman804).
+I am M. Nauman Anwar, an AI student at Superior University, Lahore. Operating under the Gokboru identity, I focus on building intelligent systems that are not only functional but also visually striking. My work bridges the gap between complex algorithms and modern design aesthetics.
 
-I am an Artificial Intelligence student and AI/ML Specialist. I am passionate about building intelligent systems and professional branding, often operating under the "Gokboru" identity. My work bridges the gap between complex machine learning algorithms and modern, high end visual design.
+📧 Email: maliknomangokboru@gmail.com
 
-Email: maliknomangokboru@gmail.com
-
-LinkedIn: M. Nauman Anwar
-
-Instagram: @gokboru__131
+🎓 Education: BS Artificial Intelligence, Superior University
