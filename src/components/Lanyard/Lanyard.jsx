@@ -5,13 +5,12 @@ import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
-
-// replace with your own imports, see the usage snippet for details
-const cardGLB = "/portofolio/assets/card.glb";
-const lanyard = "/portofolio/assets/lanyard.png";
-
 import * as THREE from 'three';
 import './Lanyard.css';
+
+// Paths check kar lein ke public/assets mein ye files hain
+const cardGLB = "./assets/card.glb";
+const lanyardImg = "./assets/lanyard.png"; 
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -37,19 +36,36 @@ export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], 
     </div>
   );
 }
+
 function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef();
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3();
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
+  
   const { nodes, materials } = useGLTF(cardGLB);
-  const texture = useTexture(lanyard);
+  const texture = useTexture(lanyardImg);
+  
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
-  const [isSmall, setIsSmall] = useState(() =>
-    typeof window !== 'undefined' && window.innerWidth < 1024
-  );
+  const [isSmall, setIsSmall] = useState(() => typeof window !== 'undefined' && window.innerWidth < 1024);
 
+ // --- TEXTURE FIXES (Front aur Back dono par poori pic ke liye) ---
+  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  
+  // Is line se pic 2 baar repeat hogi (aik side front ke liye, aik back ke liye)
+  texture.repeat.set(1, 1); 
+  
+  // Pic ko thora sa sarakane (shift) ke liye taake wo edge se shuru ho
+  texture.offset.set(0, 0); 
+
+  texture.flipY = false; 
+  texture.center.set(0.5, 0.5);
+  
+  // Agar pic abhi bhi ulti hai toh Math.PI rakhein, warna 0 kar dein
+  texture.rotation = Math.PI; 
+  
+  texture.anisotropy = 16;
   useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
   useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
@@ -61,16 +77,6 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
       return () => void (document.body.style.cursor = 'auto');
     }
   }, [hovered, dragged]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmall(window.innerWidth < 1024);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useFrame((state, delta) => {
     if (dragged) {
@@ -97,22 +103,13 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
     }
   });
 
-  curve.curveType = 'chordal';
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-
   return (
     <>
       <group position={[0, 4, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
-        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
-          <BallCollider args={[0.1]} />
-        </RigidBody>
-        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}>
-          <BallCollider args={[0.1]} />
-        </RigidBody>
-        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
-          <BallCollider args={[0.1]} />
-        </RigidBody>
+        <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
+        <RigidBody position={[1, 0, 0]} ref={j2} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
+        <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}><BallCollider args={[0.1]} /></RigidBody>
         <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? 'kinematicPosition' : 'dynamic'}>
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
@@ -122,14 +119,26 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             onPointerOut={() => hover(false)}
             onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
             onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation()))))}>
+            
+            {/* Card Mesh with your texture */}
             <mesh geometry={nodes.card.geometry}>
-              <meshPhysicalMaterial map={materials.base.map} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.9} metalness={0.8} />
+              <meshPhysicalMaterial 
+                map={texture} 
+                map-anisotropy={16} 
+                clearcoat={1} 
+                clearcoatRoughness={0.15} 
+                roughness={0.3} 
+                metalness={0.5} 
+              />
             </mesh>
+            
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
           </group>
         </RigidBody>
       </group>
+
+      {/* Band/Dori Mesh */}
       <mesh ref={band}>
         <meshLineGeometry />
         <meshLineMaterial
@@ -138,7 +147,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
           resolution={isSmall ? [1000, 2000] : [1000, 1000]}
           useMap
           map={texture}
-          repeat={[-4, 1]}
+          repeat={[-1, 1]} // Dori par pic fit karne ke liye
           lineWidth={1}
         />
       </mesh>

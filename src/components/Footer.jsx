@@ -20,11 +20,32 @@ const Footer = () => {
         </h1>
 
         {/* Ikon Sosmed - di tengah di mobile */}
-        <div className="flex gap-3 order-2 md:order-none">
-          <a href="https://github.com/rissss21"><i className="ri-github-fill ri-2x"></i></a>
-          <a href="https://www.instagram.com/farisedrikprayoga/"><i className="ri-instagram-fill ri-2x"></i></a>
-          <a href="https://www.youtube.com/@FarisEdrikPrayoga"><i className="ri-youtube-fill ri-2x"></i></a>
-        </div>
+        <div className="flex flex-wrap gap-3 order-2 md:order-none">
+  {/* GitHub */}
+  <a href="https://github.com/Nauman804" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+    <i className="ri-github-fill ri-2x"></i>
+  </a>
+
+  {/* Instagram */}
+  <a href="https://www.instagram.com/gokboru__131" target="_blank" rel="noreferrer" className="hover:text-pink-500 transition-colors">
+    <i className="ri-instagram-fill ri-2x"></i>
+  </a>
+
+  {/* YouTube */}
+  <a href="https://www.youtube.com/@foodyGirl-c3d" target="_blank" rel="noreferrer" className="hover:text-red-500 transition-colors">
+    <i className="ri-youtube-fill ri-2x"></i>
+  </a>
+
+  {/* Facebook */}
+  <a href="https://www.facebook.com/malik.noman.184331" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">
+    <i className="ri-facebook-fill ri-2x"></i>
+  </a>
+
+  {/* LinkedIn */}
+  <a href="https://www.linkedin.com/in/nomangokboru" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
+    <i className="ri-linkedin-fill ri-2x"></i>
+  </a>
+</div>
 
         {/* Dock - paling bawah di mobile */}
         <div className="order-3 md:order-none mt-15 md:mt-0  md:mb-0">

@@ -1,61 +1,58 @@
-# Portofolio Web — [Faris Edrik P / rissss21]
+AI/ML Portfolio — [M. Nauman Anwar / Nauman804]
+Welcome to my professional portfolio! 🌐
 
-Selamat datang di portofolio web pribadi saya! 🌐  
-Dibuat dengan React + Vite, ini adalah showcase dari project, skill, dan karya yang ingin saya bagikan.
+Developed using React 19 + Vite, this website serves as a showcase for my projects in Artificial Intelligence, Machine Learning, and high-fidelity AI media synthesis.
 
-##  Struktur Project
+🛠️ Project Structure
+public/ — Static assets (Favicon, branding images, etc.).
 
-- `public/` — file statis (favicon, assets, dsb.)  
-- `src/` — code utama React (komponen, utilitas, dsb.)  
-- `index.html` — entry point halaman web  
-- `package.json` & `package-lock.json` — manajemen dependencies dan script  
-- `vite.config.js` — konfigurasi build dan dev server Vite  
-- `eslint.config.js` — aturan linting agar kodenya tetap bersih dan konsisten  
+src/ — Main React source code including 3D Lanyard and Aurora background components.
 
-##  Fitur Utama
+index.html — The main entry point of the application.
 
-- Dibangun dengan **React + Vite** — ringan, cepat reload, dan performa build optimal  
-- **ESLint** telah terkonfigurasi agar coding style tetap rapi  
-- Struktur modular dan siap dikembangkan—bisa ditambahkan halaman “About”, “Projects”, dsb.
+package.json — Dependency management (Three.js, Framer Motion, GSAP).
 
-##  Cara Jalankan
+vite.config.js — Vite configuration optimized for GitHub Pages deployment.
 
-1. Clone repository ini:
-```bash
-git clone https://github.com/rissss21/portofolio.git
+✨ Key Features
+Modern Tech Stack: Built with React 19 and Vite for lightning-fast performance and hot reloading.
+
+Creative UI/UX: Features an interactive 3D Lanyard and a dynamic Aurora background for a premium feel.
+
+ML Focused: Highlights specialized Machine Learning projects such as Gokboru Spam Detector and Heart Disease Prediction.
+
+Fully Responsive: Optimized for seamless viewing on mobile, tablet, and desktop devices using Tailwind CSS.
+
+🚀 How to Run Locally
+Clone this repository:
+
+Bash
+git clone https://github.com/Nauman804/portofolio.git
 cd portofolio
-````
+Install dependencies:
 
-2. Install dependencies:
-```bash
+Bash
 npm install
-````
+Run the development server:
 
-3. Jalankan server lokal dengan hot reload:
-```bash
+Bash
 npm run dev
-````
+Deploy to GitHub Pages:
 
-4. Buat versi production:
-```bash
-npm run build
-````
+Bash
+npm run deploy
+🔗 Live Preview
+You can explore the live version of my portfolio here:
 
-## &#x20;Quick Preview
+🔗 Visit Live Portfolio
 
-Jika sudah di-deploy (contoh: GitHub Pages, Netlify, Vercel), kamu bisa tambahkan link deploy di sini, misalnya:
-[🔗 Lihat versi live](https://username.github.io/portofolio/)
+🐺 About Me
+Hi, I'm M. Nauman Anwar (GitHub: Nauman804).
 
-## Tentang Saya
+I am an Artificial Intelligence student and AI/ML Specialist. I am passionate about building intelligent systems and professional branding, often operating under the "Gokboru" identity. My work bridges the gap between complex machine learning algorithms and modern, high end visual design.
 
-Hai, saya Faris Edrik P (username GitHub: `rissss21`).
-Saya seorang Developer yang suka bikin aplikasi web ringan dengan tampilan modern dan performa tinggi. Scroll aja di project saya, dan jangan sungkan untuk reach out kalau ada pertanyaan!
+Email: maliknomangokboru@gmail.com
 
-* **Email:** [email\_farisedrik21@gmail.com](mailto:email_farisedrik21@gmail.com)
-* **LinkedIn:** [linkedin.com/in/farisedp](https://www.linkedin.com/in/farisedp/)
-* **Instagram:** @farisedrikprayoga
+LinkedIn: M. Nauman Anwar
 
----
-
-
-[1]: https://github.com/rissss21/portofolio "GitHub - rissss21/portofolio"
+Instagram: @gokboru__131
