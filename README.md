@@ -1,10 +1,9 @@
 # 🐺 M. Nauman Anwar | AI/ML Specialist Portfolio
 ### *Bridging Intelligent Systems with High-End Visual Design*
 
-[Live Site](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge&logo=googlechrome&logoColor=white)
-[LinkedIn(www.linkedin.com/in/m-nauman-anwar-8b179a364)
-[GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)
-
+[![Live Site](https://img.shields.io/badge/Live-Portfolio-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://Nauman804.github.io/portofolio/)
+[![LinkedIn](www.linkedin.com/in/m-nauman-anwar-8b179a364)](www.linkedin.com/in/m-nauman-anwar-8b179a364)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Nauman804)
 ---
 
 ## 🌐 Overview
